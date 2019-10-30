@@ -1,12 +1,17 @@
 <mat-toolbar color="">
     <mat-toolbar-row>
-        <span>ADOPET</span>
+        <span class="name-website">ADOPET</span>
         <span class="space"></span>
-        <button mat-icon-button aria-label="Example account icon">
-            <mat-icon class="home-icon">account_circle</mat-icon>
-        </button>
-        <button mat-icon-button aria-label="Example home icon">
-            <mat-icon class="home-icon">menu</mat-icon>
-        </button>
+        <span class="separete-buttons">
+            <button mat-raised-button color="accent" class="buttons-main" routerLink="login">Login</button>
+            <button mat-raised-button color="accent" class="buttons-main" routerLink="register">Cadastre-se</button>
+        </span>
+        <span>
+            <button mat-raised-button class="buttons-main" routerLink="/index">Inicio</button>
+            <button mat-raised-button class="buttons-main" routerLink="view/animals">Visualizar Animais</button>
+            <button mat-raised-button class="buttons-main" routerLink="view/ongs">Visualizar Instituições</button>
+        </span>
     </mat-toolbar-row>
 </mat-toolbar>
+
+<router-outlet></router-outlet>
