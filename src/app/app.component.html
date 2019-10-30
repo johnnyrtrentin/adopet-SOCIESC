@@ -3,13 +3,21 @@
         <span class="name-website">ADOPET</span>
         <span class="space"></span>
         <span class="separete-buttons">
-            <button mat-raised-button color="accent" class="buttons-main" routerLink="login">Login</button>
-            <button mat-raised-button color="accent" class="buttons-main" routerLink="register">Cadastre-se</button>
+            <button mat-raised-button matTooltip="Logar-se no Portal" [matTooltipShowDelay]="1000"
+                [matTooltipHideDelay]="1000" color="accent" class="buttons-main" routerLink="login">Login</button>
+            <button mat-raised-button matTooltip="Cadastra-se no Portal" [matTooltipShowDelay]="1000"
+                [matTooltipHideDelay]="1000" color="accent" class="buttons-main"
+                routerLink="register">Cadastre-se</button>
         </span>
         <span>
-            <button mat-raised-button class="buttons-main" routerLink="/index">Inicio</button>
-            <button mat-raised-button class="buttons-main" routerLink="view/animals">Visualizar Animais</button>
-            <button mat-raised-button class="buttons-main" routerLink="view/ongs">Visualizar Instituições</button>
+            <button mat-raised-button matTooltip="Ir para página de Ínicio" [matTooltipShowDelay]="1000"
+                [matTooltipHideDelay]="1000" class="buttons-main" routerLink="/index">Inicio</button>
+            <button mat-raised-button matTooltip="Ir para página de Visualização de Animais"
+                [matTooltipShowDelay]="1000" [matTooltipHideDelay]="1000" class="buttons-main"
+                routerLink="view/animals">Visualizar Animais</button>
+            <button mat-raised-button matTooltip="Ir para página de Visualização de ONGS" [matTooltipShowDelay]="1000"
+                [matTooltipHideDelay]="1000" class="buttons-main" routerLink="view/ongs">Visualizar
+                Instituições</button>
         </span>
     </mat-toolbar-row>
 </mat-toolbar>
