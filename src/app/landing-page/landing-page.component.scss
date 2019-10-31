@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Fjalla+One|Merriweather&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|Fjalla+One|Glegoo|Merriweather&display=swap');
 
 .background-mission {
   background-image: url(../../images/do-good-for-dogs-cats-and-other-animals-4.jpg);
@@ -38,3 +38,22 @@
   line-height: 1.7;
   margin-top: 10px;
 }
+
+.how-works {
+  margin-top: 35px;
+  padding-left: 106px;
+  padding-right: 16px;
+  min-height: 80px;
+}
+
+.how-works-title {
+  font-family: 'Alfa Slab One', cursive;
+  font-size: 60px;
+  font-weight: inherit;
+  text-align: center;
+}
+
+.description { font-family: 'Glegoo', serif; color: #80829c; }
+
+.txt-bold { font-weight: bold; color:  #0b2f42; }
+.txt-underline { text-decoration: underline; } 
