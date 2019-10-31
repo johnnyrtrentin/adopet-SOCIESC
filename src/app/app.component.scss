@@ -1,14 +1,12 @@
-.space {
-    flex: 1 1 auto;
-}
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One|Merriweather&display=swap');
+
+.space { flex: 1 1 auto; }
 
 .name-website {
-    margin-left: 60px;
+    margin-left: 70px;
+    font-size: 40px;
+    font-family: 'Merriweather', serif;
 }
 
-.buttons-main {
-    margin-right: 5px;
-}
-.separete-buttons {
-    margin-right: 40px;
-}
+.buttons-main { margin-right: 5px; }
+.separete-buttons { margin-right: 40px; }

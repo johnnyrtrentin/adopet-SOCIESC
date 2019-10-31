@@ -1,13 +1,40 @@
-.example-card {
-    max-width: 400px;
-    max-height: 400px;
-  }
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One|Merriweather&display=swap');
 
-  mat-grid-tile {
-    background: #12aae1;
-  }
-  
-  .example-header-image {
-    
-    background-size: cover;
-  }
+.background-mission {
+  background-image: url(../../images/do-good-for-dogs-cats-and-other-animals-4.jpg);
+  background-attachment: scroll;
+  background-size: cover;
+  background-origin: padding-box;
+  background-clip: border-box;
+}
+
+::ng-deep .mat-grid-tile:first-child .mat-figure:first-child {
+  background: linear-gradient(45deg, rgba(136, 121, 149, 0.26), rgba(27, 23, 45, 0.5) 100%);
+}
+
+.our-mission {
+  margin-left: 10%;
+  margin-right: 600px;
+  height: inherit;
+  color: white;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.title-our-mission {
+  font-family: 'Merriweather', serif;
+  font-weight: 600;
+  font-size: 500%;
+  margin-top: 36%;
+  line-height: 1.2;
+  text-align: left;
+  margin-bottom: auto;
+}
+
+.text-our-mission {
+  font-family: 'Fjalla One',  sans-serif;
+  font-size: 1.2rem;
+  text-indent: 50px;
+  font-weight: 300;
+  line-height: 1.7;
+  margin-top: 10px;
+}
