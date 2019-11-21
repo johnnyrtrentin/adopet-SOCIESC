@@ -1,3 +1,5 @@
+#imagem para gerar o aplicativo adopet-web
+
 FROM node:lts
 
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -

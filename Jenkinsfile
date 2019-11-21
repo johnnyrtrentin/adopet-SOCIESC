@@ -6,11 +6,11 @@ pipeline {
     stages {
         stage('Build DockerFile') {
             steps {
-                sh "docker build -f DockerFile -t adopet:${dockerTag}"
+                sh "docker build -f dockerfile -t adopet:${dockerTag}"
             }
         }
 
-        stage('Rund Container') {
+        stage('Run Container') {
             steps {
                 sh "docker run -it --rm adopet:${dockerTag}";
             }
