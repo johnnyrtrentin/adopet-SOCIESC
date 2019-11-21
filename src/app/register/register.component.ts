@@ -17,6 +17,7 @@ export class RegisterComponent implements OnInit {
   emailField = new FormControl('', [Validators.required]);
   passwordField = new FormControl('', [Validators.required]);
   foneField = new FormControl('', [Validators.required]);
+  cnpjField = new FormControl('', [Validators.required]);
 
 
   public cadastrar_click() {

@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
   constructor(private router: Router) { }
   emailField = new FormControl('', [Validators.required]);
   passwordField = new FormControl('', [Validators.required]);
+  nomeField = new FormControl ('', [Validators.required]);
 
 
   public logar_click() {

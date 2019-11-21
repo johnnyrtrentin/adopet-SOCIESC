@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ViewAnimalsComponent } from './view-animals.component';
+import { MaterialModule } from '../../app/material';
 
 describe('ViewAnimalsComponent', () => {
   let component: ViewAnimalsComponent;
@@ -8,6 +9,7 @@ describe('ViewAnimalsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [ MaterialModule ],
       declarations: [ ViewAnimalsComponent ]
     })
     .compileComponents();

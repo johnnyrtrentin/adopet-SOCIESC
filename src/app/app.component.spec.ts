@@ -1,35 +1,39 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+
 import { AppComponent } from './app.component';
 
+import { MaterialModule } from '../app/material';
+
 describe('AppComponent', () => {
+  let component: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
-      declarations: [
-        AppComponent
-      ],
+      imports: [ RouterTestingModule, MaterialModule ],
+      declarations: [ AppComponent ],
     }).compileComponents();
   }));
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('Deve criar o aplicativo', () => {
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'adopet-web'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('adopet-web');
+  it(`Deve conter o titulo do aplicativo 'adopet-web'`, () => {
+    const appTitle = fixture.debugElement.componentInstance;
+    expect(appTitle.title).toEqual('adopet-web');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('adopet-web app is running!');
+  it('Deve renderizar o título da aba da página', () => {
+    const appTabTitle = fixture.debugElement.nativeElement;
+    expect(appTabTitle.querySelector('.name-website').textContent).toContain('ADOPET');
   });
 });
