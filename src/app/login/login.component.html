@@ -34,8 +34,7 @@ background-size: cover;
                     [disabled]="nomeField.invalid || emailField.invalid || passwordField.invalid"
                     (click)="logar_click()">Acessar</button>
             </div>
-            <a class="register" [routerLink]="['/register']"> Não possui uma conta? Cadastre-se aqui!</a>
+            <button button mat-button class="register" routerLink="/register"> Não possui uma conta? Cadastre-se aqui!</button>
         </form>
     </div>
-
 </div>

@@ -1,41 +1,49 @@
 import { TestBed, async, ComponentFixture, inject } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { AppComponent } from './app.component';
 
 import { MaterialModule } from '../app/material';
-import { By } from '@angular/platform-browser';
 import { RegisterComponent } from './register/register.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { ViewAnimalsComponent } from './view-animals/view-animals.component';
 import { ViewOngsComponent } from './view-ongs/view-ongs.component';
+import { LoginComponent } from './login/login.component';
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 describe('AppComponent', () => {
-  let component: AppComponent;
   let fixture: ComponentFixture<AppComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, MaterialModule, RegisterComponent, LandingPageComponent, ViewAnimalsComponent, ViewOngsComponent,
+      imports: [
+        RouterTestingModule,
+        MaterialModule,
+        FormsModule,
+        ReactiveFormsModule,
         RouterTestingModule.withRoutes([
           { path: 'login', component: AppComponent },
           { path: 'register', component: RegisterComponent },
           { path: 'index', component: LandingPageComponent },
-          { path: 'view/animais', component: ViewAnimalsComponent },
+          { path: 'view/animals', component: ViewAnimalsComponent },
           { path: 'view/ongs', component: ViewOngsComponent }
         ])
       ],
-      declarations: [AppComponent, RegisterComponent, LandingPageComponent, ViewAnimalsComponent, ViewOngsComponent],
+      declarations: [
+        AppComponent,
+        RegisterComponent,
+        LandingPageComponent,
+        ViewAnimalsComponent,
+        ViewOngsComponent,
+        LoginComponent
+      ],
+      providers: [FormBuilder]
     }).compileComponents();
-  }));
 
-  beforeEach(() => {
     fixture = TestBed.createComponent(AppComponent);
-    component = fixture.componentInstance;
     fixture.detectChanges();
-  });
+  }));
 
   it('Deve criar o aplicativo', () => {
     const app = fixture.debugElement.componentInstance;
@@ -53,7 +61,7 @@ describe('AppComponent', () => {
   });
 
   it('Deve clicar no botão de "Login" e redirecionar a página',
-    async(inject([Router, Location], (router: Router, location: Location) => {
+    async(inject([Location], (location: Location) => {
       const btnLogin = fixture.debugElement.nativeElement;
 
       btnLogin.querySelector('#btnLogin').click();
@@ -61,14 +69,34 @@ describe('AppComponent', () => {
         expect(location.path()).toEqual('/login');
       });
     })));
-    
-  it('Deve clicar no botão de "Cadastro" e redirecionar a página', 
-    async(inject([Router, Location], (router: Router, location: Location) => {
+
+  it('Deve clicar no botão de "Cadastro" e redirecionar a página',
+    async(inject([Location], (location: Location) => {
       const btnRegister = fixture.debugElement.nativeElement;
 
       btnRegister.querySelector('#btnRegister').click();
       fixture.whenStable().then(() => {
         expect(location.path()).toEqual('/register');
       });
-  })));
+    })));
+
+  it('Deve clicar no botão de "Visualização de Animais" e redirecionar a página',
+    async(inject([Location], (location: Location) => {
+      const btnAnimals = fixture.debugElement.nativeElement;
+
+      btnAnimals.querySelector('#btnAnimals').click();
+      fixture.whenStable().then(() => {
+        expect(location.path()).toEqual('/view/animals');
+      });
+    })));
+
+  it('Deve clicar no botão de "Visualização de Ong\'s" e redirecionar a página',
+    async(inject([Location], (location: Location) => {
+      const btnOngs = fixture.debugElement.nativeElement;
+
+      btnOngs.querySelector('#btnOngs').click();
+      fixture.whenStable().then(() => {
+        expect(location.path()).toEqual('/view/ongs');
+      });
+    })));
 });

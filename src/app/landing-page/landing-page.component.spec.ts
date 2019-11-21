@@ -13,13 +13,11 @@ describe('LandingPageComponent', () => {
       declarations: [ LandingPageComponent ]
     })
     .compileComponents();
-  }));
 
-  beforeEach(() => {
     fixture = TestBed.createComponent(LandingPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
+  }));
 
   it('Deve criar o componente', () => {
     expect(component).toBeTruthy();
