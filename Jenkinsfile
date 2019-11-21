@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Build DockerFile') {
             steps {
-                sh "docker build -f dockerfile -t adopet:${dockerTag}"
+                sh "docker build -f dockerfile -t adopet:${dockerTag} ."
             }
         }
 
