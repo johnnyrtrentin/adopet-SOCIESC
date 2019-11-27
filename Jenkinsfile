@@ -15,7 +15,7 @@ pipeline {
 
             stage('Run Container') {
                 steps { 
-                    sh "docker run -id -p 4300:4200 --rm adopet:${dockerTag}" 
+                    sh "docker run --name adopet -id -p 4300:4200 --rm adopet:${dockerTag}" 
                 }
             }
         }
@@ -25,7 +25,7 @@ pipeline {
         stages {
             stage("Run KARMA Test") {
                 scripts {
-                    sh 'npm run test'
+                    sh 'docker exec adopet npm run test:ci'
                 }
             }
         }
