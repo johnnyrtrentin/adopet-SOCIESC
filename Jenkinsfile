@@ -3,7 +3,7 @@ pipeline {
 
     environment { 
         dockerTag = "${env.BUILD_ID}" 
-        }
+    }
 
     stages {
         stage ("Build Application") {
@@ -21,9 +21,7 @@ pipeline {
                 }
             }
         }
-    }
 
-    stages {
         stage ("Test Application") {
             stages {
                 stage ("Run KARMA Test") {
