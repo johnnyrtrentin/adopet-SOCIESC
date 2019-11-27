@@ -27,7 +27,7 @@ pipeline {
         stage ("Test Application") {
             stages {
                 stage ("Run KARMA Test") {
-                    scripts {
+                    steps {
                         sh 'docker exec adopet npm run test:ci'
                     }
                 }
