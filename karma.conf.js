@@ -21,7 +21,7 @@ module.exports = function (config) {
       fixWebpackSourcePaths: true
     },
     customLaunchers: {
-      ChromeHeadlessCI: {
+      ChromeHeadless: {
         base: 'ChromeHeadless',
         flags: ['--no-sandbox']
       }
@@ -31,7 +31,7 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: false,
-    browsers: ['Chrome'],
+    browsers: ['ChromeHeadless'],
     browserNoActivityTimeout: 60000,
     singleRun: true,
     restartOnFileChange: false

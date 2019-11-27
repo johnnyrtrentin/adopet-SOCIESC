@@ -5,10 +5,14 @@ pipeline {
         dockerTag = "${env.BUILD_ID}" 
     }
 
+    options {
+        timestamps()
+    }
+
     stages {
         stage ("Build Application") {
             stages {
-                stage ('Build DockerFile') {
+                stage ('Build Dockerfile') {
                     steps { 
                         sh "docker build -f dockerfile -t adopet:${dockerTag} ." 
                     }
@@ -16,7 +20,7 @@ pipeline {
 
                 stage ('Run Container') {
                     steps { 
-                        sh "docker run --name adopet -id -p 4300:4200 --rm adopet:${dockerTag}" 
+                        sh "docker run --name adopet --user root -id -p 4300:4200 --rm adopet:${dockerTag}" 
                     }
                 }
             }
@@ -26,7 +30,7 @@ pipeline {
             stages {
                 stage ("Run KARMA Test") {
                     steps {
-                        sh 'docker exec adopet npm run test:ci'
+                        sh 'docker exec adopet ng test'
                     }
                 }
             }
@@ -36,6 +40,7 @@ pipeline {
     post {
         always {
             script {
+                sh 'docker stop adopet'
                 sh "docker rmi -f adopet:${dockerTag}"
             }
         }
