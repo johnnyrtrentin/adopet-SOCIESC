@@ -1,7 +1,7 @@
 pipeline {
     agent any
 
-    environment {dockerTag = "${env.BUILD_ID}"}
+    environment { dockerTag = "${env.BUILD_ID}" }
 
     stages {
         stage('Build DockerFile') {
@@ -12,14 +12,8 @@ pipeline {
 
         stage('Run Container') {
             steps {
-                sh "docker run -it --rm adopet:${dockerTag}";
+                sh "docker run -i --rm adopet:${dockerTag}";
             }
-        }
-    }
-
-    post {
-        always {
-            echo "teste";
         }
     }
 }
