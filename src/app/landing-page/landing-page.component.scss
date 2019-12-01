@@ -40,7 +40,6 @@
 }
 
 .how-works {
-  margin-top: 35px;
   padding-left: 106px;
   padding-right: 16px;
   min-height: 80px;
@@ -51,9 +50,50 @@
   font-size: 60px;
   font-weight: inherit;
   text-align: center;
+  margin: revert;
 }
 
 .description { font-family: 'Glegoo', serif; color: #80829c; }
 
 .txt-bold { font-weight: bold; color:  #0b2f42; }
 .txt-underline { text-decoration: underline; } 
+
+.square-one {
+  background-color:  #a7a585;
+  text-align: center;
+}
+.square-two {
+  background-color:  #c9a791 ;
+  text-align: center;
+}
+.square-three {
+  background-color:  #9192c9;
+  text-align: center;
+}
+.square-four {
+  background-color:  #c1be82;
+  text-align: center;
+}
+
+.square-title {
+  text-align: center;
+  margin-top: -120px;
+  font-weight: 300;
+}
+
+.square-text {
+  font-family: 'Glegoo', serif;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.icon-box { 
+  font-size: 40px; 
+  margin-top: 20px; 
+}
+
+// FONTES
+// font-family: 'Merriweather', serif;
+// font-family: 'Fjalla One', sans-serif;
+// font-family: 'Alfa Slab One', cursive;
+// font-family: 'Glegoo', serif;
