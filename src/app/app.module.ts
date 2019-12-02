@@ -12,7 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { ViewOngsComponent } from './view-ongs/view-ongs.component';
-import { ViewAnimalsComponent } from './view-animals/view-animals.component';
+import { ViewAnimalsComponent, animalModal } from './view-animals/view-animals.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,8 @@ import { ViewAnimalsComponent } from './view-animals/view-animals.component';
     RegisterComponent,
     LandingPageComponent,
     ViewOngsComponent,
-    ViewAnimalsComponent
+    ViewAnimalsComponent, 
+    animalModal
   ],
   imports: [
     BrowserModule,
@@ -32,6 +33,7 @@ import { ViewAnimalsComponent } from './view-animals/view-animals.component';
     MaterialModule
   ],
   providers: [],
+  entryComponents: [animalModal],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

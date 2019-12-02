@@ -7,6 +7,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatListModule} from '@angular/material/list';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { NgModule } from '@angular/core';
 
@@ -20,7 +23,10 @@ import { NgModule } from '@angular/core';
         MatSelectModule,
         MatGridListModule ,
         MatCardModule,
-        MatTooltipModule
+        MatTooltipModule,
+        MatDividerModule,
+        MatListModule,
+        MatDialogModule
     ],
     exports: [
         MatToolbarModule,
@@ -31,7 +37,10 @@ import { NgModule } from '@angular/core';
         MatSelectModule,
         MatGridListModule,
         MatCardModule,
-        MatTooltipModule
+        MatTooltipModule,
+        MatDividerModule,
+        MatListModule,
+        MatDialogModule
     ]
 })
 export class MaterialModule { }
