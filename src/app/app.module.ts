@@ -13,6 +13,8 @@ import { RegisterComponent } from './register/register.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { ViewOngsComponent } from './view-ongs/view-ongs.component';
 import { ViewAnimalsComponent, animalModal } from './view-animals/view-animals.component';
+import { AnimalService } from './services/create-animal.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,9 +32,10 @@ import { ViewAnimalsComponent, animalModal } from './view-animals/view-animals.c
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ AnimalService ],
   entryComponents: [animalModal],
   bootstrap: [AppComponent]
 })

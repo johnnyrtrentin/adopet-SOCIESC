@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { AnimalService } from '../services/create-animal.service';
 
 export interface modalData {
   animalName: string;
@@ -20,7 +21,7 @@ export class ViewAnimalsComponent implements OnInit {
   animalColor: string;
   animals: Array<object> = [];
 
-  constructor(private modal: MatDialog) { }
+  constructor(private modal: MatDialog,  private teste: AnimalService) { }
 
   OpenModal(): void {
     const modalData = this.modal.open(animalModal, {
@@ -32,8 +33,15 @@ export class ViewAnimalsComponent implements OnInit {
       }]
     });
 
-    modalData.afterClosed().subscribe(result => 
-      result ? this.animals.push(result) : '');
+    modalData.afterClosed().subscribe(result => {
+      result ? this.animals.push(result) : '';
+      this.teste.saveAnimal(result).subscribe(data => {
+        console.log(data)
+      });
+      this.teste.getAnimal().subscribe(data => {
+        console.log(data)
+      });
+    });
   }
 
   ngOnInit() { }
