@@ -1,3 +1,35 @@
+<div class="animal-wallpaper">
+    <div>
+        <button mat-raised-button color="wanr" (click)="OpenModal()" class="btn-register-animal">
+            Cadastrar Animais
+        </button>
+    </div>
 
-<button mat-raised-button color="wanr" (click)="OpenModal()">Cadastrar Animais</button>
-<mat-divider [inset]="true"></mat-divider>
+    <div *ngIf="animals">
+        <div *ngFor="let animal of animals" class="d-flex justify-content-center">
+            <mat-list>
+                <mat-card>
+                    <mat-card-header>
+                        <div mat-card-avatar class="animal-header-image"></div>
+                        <mat-card-title>PET {{animal.animalName}}</mat-card-title>
+                        <mat-card-subtitle>Disponível para adoção!</mat-card-subtitle>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <div>Espécie do PET: {{animal.animalType}}</div>
+                        <div>Cor do PET: {{animal.animalColor}}</div>
+                    </mat-card-content>
+
+                    <mat-card-actions>
+                        <button mat-icon-button class="btn-card">Curtir
+                            <mat-icon>thumb_up_alt</mat-icon>
+                        </button>
+                        <button mat-button>Adotar
+                            <mat-icon>pets</mat-icon>
+                        </button>
+                    </mat-card-actions>
+                </mat-card>
+            </mat-list>
+        </div>
+    </div>
+</div>

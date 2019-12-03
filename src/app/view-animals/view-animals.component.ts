@@ -5,7 +5,7 @@ export interface modalData {
   animalName: string;
   animalType: string;
   animalColor: string;
-} 
+}
 
 @Component({
   selector: 'app-view-animals',
@@ -18,22 +18,22 @@ export class ViewAnimalsComponent implements OnInit {
   animalType: string;
   animalName: string;
   animalColor: string;
+  animals: Array<object> = [];
 
   constructor(private modal: MatDialog) { }
 
   OpenModal(): void {
     const modalData = this.modal.open(animalModal, {
       width: '240px',
-      data: { 
-        animalName: this.animalName, 
-        animalType: this.animalType, 
-        animalColor: this.animalColor 
-      }
+      data: [{
+        animalName: this.animalName,
+        animalType: this.animalType,
+        animalColor: this.animalColor
+      }]
     });
 
-    modalData.afterClosed().subscribe(result => {
-      console.log(result)
-    });
+    modalData.afterClosed().subscribe(result => 
+      result ? this.animals.push(result) : '');
   }
 
   ngOnInit() { }
@@ -45,7 +45,7 @@ export class ViewAnimalsComponent implements OnInit {
 })
 
 export class animalModal {
-  constructor( public dialogRef: MatDialogRef<animalModal>, @Inject(MAT_DIALOG_DATA) public data: modalData) { }
+  constructor(public dialogRef: MatDialogRef<animalModal>, @Inject(MAT_DIALOG_DATA) public data: modalData) { }
 
   onNoClick(): void {
     this.dialogRef.close();

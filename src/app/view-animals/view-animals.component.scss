@@ -1,0 +1,36 @@
+.animal-card {
+    max-width: 400px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center; 
+    align-items: center;
+}
+  
+.animal-header-image {
+    background-image: url('https://cataas.com/cat');
+    background-size: cover;
+}
+
+.animal-wallpaper {
+    background-image: url(../../images/dogs-playing.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 91.2%;       
+}
+
+.btn-register-animal {
+    margin-left: 10px; 
+    margin-top: 10px;
+}
+
+.btn-card {
+    margin-right: 10px;
+}
+
+md-divider {
+    border-width: 1px;
+    border-style: solid;
+}
