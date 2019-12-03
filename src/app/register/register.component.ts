@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators} from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -21,9 +21,9 @@ export class RegisterComponent implements OnInit {
 
 
   public cadastrar_click() {
+    this.router.navigateByUrl('/login');
   }
-  ngOnInit() {
-    // this.router.navigate([])
-  }
+
+  ngOnInit() { }
 }
 

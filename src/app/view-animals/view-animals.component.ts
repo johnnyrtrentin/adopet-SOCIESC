@@ -35,16 +35,14 @@ export class ViewAnimalsComponent implements OnInit {
 
     modalData.afterClosed().subscribe(result => {
       result ? this.animals.push(result) : '';
-      this.teste.saveAnimal(result).subscribe(data => {
-        console.log(data)
-      });
-      this.teste.getAnimal().subscribe(data => {
-        console.log(data)
-      });
     });
   }
-
-  ngOnInit() { }
+  
+  ngOnInit() { 
+    // this.teste.getAnimal().subscribe(data => {
+    //   console.log(data)
+    // });
+  }
 }
 
 @Component({

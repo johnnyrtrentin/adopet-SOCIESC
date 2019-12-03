@@ -12,6 +12,9 @@ import { ViewOngsComponent } from './view-ongs/view-ongs.component';
 import { LoginComponent } from './login/login.component';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { AnimalService } from './services/create-animal.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+
 describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
 
@@ -22,6 +25,7 @@ describe('AppComponent', () => {
         MaterialModule,
         FormsModule,
         ReactiveFormsModule,
+        HttpClientTestingModule,
         RouterTestingModule.withRoutes([
           { path: 'login', component: AppComponent },
           { path: 'register', component: RegisterComponent },
@@ -38,7 +42,7 @@ describe('AppComponent', () => {
         ViewOngsComponent,
         LoginComponent
       ],
-      providers: [FormBuilder]
+      providers: [FormBuilder, AnimalService]
     }).compileComponents();
 
     fixture = TestBed.createComponent(AppComponent);
